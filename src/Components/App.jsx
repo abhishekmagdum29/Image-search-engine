@@ -55,22 +55,23 @@ const App = () => {
 
   return (
     <div>
-      <div className="w-full h-[24] p-8 border-b-2 flex items-center ">
+      <div className="w-full h-[24] py-5 px-2 md:p-8 border-b-2 flex  items-center ">
         <img
-          className="w-12 h-12  cursor-pointer"
+          className="md:w-12 md:h-12 w-8 h-8  cursor-pointer"
           src={
             "https://cdn.icon-icons.com/icons2/3261/PNG/512/unsplash_logo_icon_206651.png"
           }
           alt="img"
         />
-        <p className="ml-2 text-2xl font-bold">Unsplash</p>
+        <p className="ml-2 hidden md:block md:text-2xl font-bold">Unsplash</p>
+
         <form
-          className=" ml-44  w-[60%] h-14 text-base   rounded-lg drop-shadow-xl flex justify-center items-center"
+          className="ml-[118px] md:ml-44  w-[30%]  md:w-[60%] h-10 md:h-14  md:text-base   rounded-lg drop-shadow-xl flex justify-center items-center"
           onSubmit={(e) => e.preventDefault()}
         >
           {searchText && (
             <div
-              className="relative left-[695px] flex justify-center items-center w-8 h-8  hover:bg-slate-300 rounded-full cursor-pointer  "
+              className="relative left-[235px] md:left-[695px] flex justify-center items-center w-4 h-4 md:w-8 md:h-8  hover:bg-slate-300 rounded-full cursor-pointer  "
               onClick={clearSearchText}
             >
               <AiOutlineClose className=" text-[#3D4152]  " />
@@ -78,7 +79,7 @@ const App = () => {
           )}
           <input
             ref={inputRef}
-            className="w-96 h-full px-7 flex-1 outline-0 border-0  rounded-tl-lg rounded-bl-lg text-lg "
+            className="w-[250px] md:w-96 h-full px-4 md:px-7 flex-none md:flex-1 outline-0 border-0  rounded-tl-lg rounded-bl-lg text-base md:text-lg "
             type="text"
             placeholder="Search images here"
             value={searchText}
@@ -87,7 +88,7 @@ const App = () => {
 
           <button
             id="btn"
-            className="bg-red-600  h-full outline-0  border-0 px-10 rounded-tr-lg rounded-br-lg  text-white text-lg drop-shadow-xl cursor-pointer"
+            className="bg-red-600  h-full outline-0  border-0 px-4 md:px-10 rounded-tr-lg rounded-br-lg  text-white text-base md:text-lg drop-shadow-xl cursor-pointer"
             onClick={() => {
               (page = 1), getImageData();
             }}
